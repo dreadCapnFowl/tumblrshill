@@ -10,7 +10,6 @@ import json
 # Credentials from the application page
 key = ''
 secret = ''
-# https://www.tumblr.com/dashboard?oauth_token=w67b7QAbqOUYEt1U8Rp2DsoitZyxOJ47mwmmrlCHTsMAE8L8Vk&oauth_verifier=rm6hxsiTMOdUl4PA5gp18yslPNTbRgyyfL8iJViJadh413cP9O
 otoken = ''
 osecret = ''
 
