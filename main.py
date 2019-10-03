@@ -7,10 +7,10 @@ import random
 import sys
 
 client = pytumblr.TumblrRestClient(
-	'gBjbv6e1oSADImhBJh1R5eubq7ZsNcXQm2x640y3QaTG2PHdRI',
-	'qLkzyc8bKT4xMdZpqHesOLgdg1XrhepuBSOSRt6JpOmbANKQl4',
-	'ec3OJvuBWbsw21jYQlltMB4VCfo7drDbP4zNUf87YeNua1rKfF',
-	'Zxk3Y4c1hesSrKsxyATQr2R1rXcTcWSWO4Dqr1YuahtmrdoJ1p',
+	'',
+	'',
+	'',
+	'',
 )
 if 'meta' in client.info():
 	s = client.info()['meta']['status']
