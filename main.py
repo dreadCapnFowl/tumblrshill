@@ -5,12 +5,20 @@ import threading
 import os
 import random
 import sys
+import json
+
+# Credentials from the application page
+key = ''
+secret = ''
+# https://www.tumblr.com/dashboard?oauth_token=w67b7QAbqOUYEt1U8Rp2DsoitZyxOJ47mwmmrlCHTsMAE8L8Vk&oauth_verifier=rm6hxsiTMOdUl4PA5gp18yslPNTbRgyyfL8iJViJadh413cP9O
+otoken = ''
+osecret = ''
 
 client = pytumblr.TumblrRestClient(
-	'',
-	'',
-	'',
-	'',
+	key,
+	secret,
+	otoken,
+	osecret
 )
 if 'meta' in client.info():
 	s = client.info()['meta']['status']
@@ -65,12 +73,9 @@ def doFollows(client, tags):
 	
 	for i in range(10):
 		post = random.choice(posts)
-		print('Followed ', post['blog_name'])
-		try:
-			r = client.follow(post['blog_name'])
-		except e as Exception:
-			print(e)
-
+		print('Followed ', post['blog_name'].encode('utf-8'))
+		r = client.follow(post['blog_name'])
+		print(r['blog']['description'].encode('utf-8'))
 	
 	# Reblog random post
 	"""
@@ -119,7 +124,7 @@ def followsLoop(client):
 		print('Initiating follow routine.')
 		doFollows(client, tags)
 		print('Waiting...')
-		time.sleep(60 * 5)
+		time.sleep(60)
 	return
 def doPosts(client):
 	while True:
